@@ -6,6 +6,7 @@ import ByFirstLetter from './component/ByFirstLetter/ByFirstLetter';
 import Alcoholic from './component/Alcoholic/Alcoholic';
 import NonAlcohlic from './component/NonAlcoholic/NonAlcoholic';
 import Home from './component/Home/Home';
+import Lookup from './component/Lookup';
 
 
  class App extends Component {
@@ -22,12 +23,14 @@ import Home from './component/Home/Home';
         <Link to="/ByFirstLetter">By First Letter</Link>
         <Link to="/Alcohlic">Alcohlic</Link>
         <Link to="/NonAlcohlic">Non Alcohlic</Link>
+        <Link to="/lookup">lookup</Link>
         <switch>
           <Route exact path="/" component={Home} />
           <Route path="/ByName" component={ByName} />
           <Route path="/ByFirstLetter" component={ByFirstLetter} />
           <Route path="/Alcohlic" component={Alcoholic} />
           <Route path="/NonAlcohlic" component={NonAlcohlic} />
+          <Route path="/lookup" component={Lookup} />
         </switch>
 
           

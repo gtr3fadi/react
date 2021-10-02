@@ -50,6 +50,24 @@ class Home extends Component {
      
     return (
       <>
+      //home page
+        <div className="jumbotron">
+            <div className="container">
+                <h1 className="display-4">Welcome to Cocktail DB</h1>
+                <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr className="my-4" />
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p className="lead">
+                    <Link to="/lookup" className="btn btn-primary btn-lg">Lookup</Link>
+                </p>
+            </div>
+        </div>
+        <div className="container">
+            <div className="row">
+                {postList}
+            </div>
+        </div>
+      
         {/* <ul>
             <li><Link to="/" data-text="Home">Home</Link></li>
             <li><Link to="/ByName" data-text="By Name">By Name</Link></li>
