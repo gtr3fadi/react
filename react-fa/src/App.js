@@ -1,28 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component ,Fragment } from 'react';
 import axios from 'axios';
-import React, { Component } from 'react';
+import {BrowserRouter , Router, Route, Link} from 'react-router-dom';
+import ByName from './component/ByName/ByName';
+import ByFirstLetter from './component/ByFirstLetter/ByFirstLetter';
+import Alcoholic from './component/Alcoholic/Alcoholic';
+import NonAlcohlic from './component/NonAlcoholic/NonAlcoholic';
+import Home from './component/Home/Home';
 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+ class App extends Component {
+   constructor(props) {
+     super(props);
+     this.state = {  }
+   }
+   render() { 
+     return (  
+        <BrowserRouter>
 
-export default App;
+        <Link to="/">Home</Link>
+        <Link to="/ByName">By Nmae</Link>
+        <Link to="/ByFirstLetter">By First Letter</Link>
+        <Link to="/Alcohlic">Alcohlic</Link>
+        <Link to="/NonAlcohlic">Non Alcohlic</Link>
+        <switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/ByName" component={ByName} />
+          <Route path="/ByFirstLetter" component={ByFirstLetter} />
+          <Route path="/Alcohlic" component={Alcoholic} />
+          <Route path="/NonAlcohlic" component={NonAlcohlic} />
+        </switch>
+
+          
+        </BrowserRouter>
+
+
+
+     );
+   }
+ }
+  
+ export default App;
