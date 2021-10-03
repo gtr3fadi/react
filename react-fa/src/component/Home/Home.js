@@ -10,26 +10,38 @@ class Home extends Component {
            super(props);
            this.state = {
              drinks: [],
-             searchValue: 'a',
+             searchValue: ''
            }
          }
-        
-       componentDidMount(){
-         axios.get(`https://www.thecocktaildb.com/api/json/v1/1//search.php?f=${this.state.searchValue}`)
-         .then(res => {
-           this.setState({
-             drinks: res.data.drinks
-             
-           })
-           console.log(res.data.drinks)
-         })
-         .catch(err => {
-           console.log(err);
-         }
-         )
-     }
-     
 
+         onChange = (e) => {
+              this.setState({
+                searchValue: e.target.value
+                })}
+        
+         getApiDetails = () => {
+                        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + this.state.searchValue)
+                        .then(res => {
+                            this.setState({
+                                drinks: res.data.drinks
+                            })
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                    }
+
+       componentDidMount(){
+            this.getApiDetails();
+            }
+     
+        componentDidUpdate(prevProps, prevState){
+            if(prevState.searchValue !== this.state.searchValue){
+                this.getApiDetails();
+                     }
+              }
+     
+         
 
   render() {
 
@@ -70,7 +82,7 @@ class Home extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="input-group m-3">
-                <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2"/>
+                <input type="text" className="form-control" onChange={this.onChange} placeholder="Search" aria-label="Search" aria-describedby="basic-addon2"/>
                 <div className="input-group-append">
                   <button className="btn btn-outline-secondary" type="button">Search</button>
                 </div>
@@ -84,8 +96,9 @@ class Home extends Component {
 
         {drinksList}
       </>
-    )
+    );
   }
 }
+
 
 export default Home
