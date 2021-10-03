@@ -19,6 +19,30 @@ class Home extends Component {
               this.setState({
                 searchValue: e.target.value
                 })}
+
+                // getD =()=> {
+                //     let one=`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${this.searchValue}`
+                //     let two=`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.searchValue}`
+                //     let three=`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${this.searchValue}`
+                
+                //     const requestOne = axios.get(one);
+                //     const requestTwo = axios.get(two);
+                //     const requestThree = axios.get(three);
+                
+                
+                //     axios.all([requestOne, requestTwo, requestThree])
+                //       .then(axios.spread((...responses) => {
+                //         this.setState({
+                //             drinks: responses[0].data.drinks
+                //         })
+                        
+                //       }))
+                //       .catch(error => {
+                //         this.setState({
+                //           error: error
+                //         })
+                //       })
+                // }       
         
          getApiDetails = () => {
                         axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + this.state.searchValue)
