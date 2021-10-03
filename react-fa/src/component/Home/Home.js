@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import "./Home.css";
 
 
 class Home extends Component {
@@ -48,34 +49,35 @@ class Home extends Component {
     const {drinks} = this.state;
     const {searchValue} = this.state;
     const drinksList = this.state.drinks.map(drink => {
-       return(
+       return (
          // in card with image and name in row-cols-3 and button to go to drink page
-         <div className="card" key={drink.idDrink}>
-           <div className="card-image">
-             <img src={drink.strDrinkThumb} alt="drink" />
-             <span className="card-title">{drink.strDrink}</span>
-           </div>
-           <div className="card-content">
-             <p>{drink.strInstructions}</p>
-           </div>
-           <div className="card-action">
-             <Link to={`/drink/${drink.idDrink}`}>
-               <button className="btn-small">
-                 View Recipe
-               </button>
-             </Link>
+         <div className="col p-2">
+           <div className="card card-fa" key={drink.idDrink}>
+             <img
+               src={drink.strDrinkThumb}
+               alt={drink.strDrink}
+               class="card-img-top"
+               alt={drink.strDrink}
+             />
+             <div className="card-body">
+               <h5 className="card-title">{drink.strDrink}</h5>
+               <p className="card-text">
+               {drink.strAlcoholic}
+               </p>
+               <Link to={`/drink/${drink.idDrink}`}>
+                 <button className="btn btn-primary btn-fa">View Recipe</button>
+               </Link>
+             </div>
            </div>
          </div>
-
-
-      )})
+       );})
 
 
 
 
 
     return (
-      <>
+      < div className="container-fa">
 
 
         <div className="container">
@@ -91,14 +93,17 @@ class Home extends Component {
           </div>
         </div>
 
+        <div className="container">
+          <div className="row row-cols-4">
+            {drinksList}
+          </div>
+        </div>
 
-
-
-        {drinksList}
-      </>
-    );
+      </div>
+    )
   }
-}
 
+
+}
 
 export default Home

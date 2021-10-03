@@ -1,4 +1,5 @@
 import React, { Component ,Fragment } from 'react';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import axios from 'axios';
 import {BrowserRouter ,Switch, Router, Route, Link} from 'react-router-dom';
 import Home from './component/Home/Home';
