@@ -52,8 +52,8 @@ class SingleDrink extends Component {
                      <p className="col">{this.state.drink.strCategory}</p>
                      <p className="col">{this.state.drink.strAlcoholic}</p>
                 </div>
-                <div className="cocktail-info row">
-                <figure>
+                <div className="cocktail-info row row-cols-3">
+                <figure className="col">
 							
                                 {getImage(this.state.drink.strIngredient1)}
                                 <p>
@@ -62,7 +62,7 @@ class SingleDrink extends Component {
 							<figcaption>{this.state.drink.strIngredient1}</figcaption>
                             
 				</figure>
-                <figure>
+                <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient2)}
                                     <p>
@@ -71,7 +71,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient2}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient3)}
                                     <p>
@@ -80,7 +80,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient3}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient4)}
                                     <p>
@@ -89,7 +89,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient4}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient5)}
                                     <p>
@@ -98,14 +98,14 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient5}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient6)}
                                     <p>
                                     {this.state.drink.strMeasure6}
                                 </p>
                                 <figcaption>{this.state.drink.strIngredient6}</figcaption>  </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient7)}
                                     <p>
@@ -114,7 +114,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient7}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient8)}
                                     <p>
@@ -123,7 +123,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient8}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient9)}
                                     <p>
@@ -132,7 +132,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient9}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient10)}
                                     <p>
@@ -141,7 +141,7 @@ class SingleDrink extends Component {
                                 <figcaption>{this.state.drink.strIngredient10}</figcaption>
                                 
                     </figure>
-                    <figure>
+                    <figure className="col">
                                 
                                     {getImage(this.state.drink.strIngredient11)}
                                     <p>
