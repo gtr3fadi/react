@@ -3,8 +3,8 @@ import axios from 'axios'
 
 class SingleDrink extends Component {
     state = {
-        drink: null
-        
+        drink: null,
+       
     }
 
 
@@ -30,31 +30,32 @@ class SingleDrink extends Component {
 
 
   render() {
+      
+     
 
     const drink  = this.state.drink ? (
-        <div className="single-drink">
-            <h1>{this.state.drink.strDrink}</h1>
-            <img src={this.state.drink.strDrinkThumb} alt=""/>
-            <h3>Ingredients</h3>
-            <ul>
-                <li>{this.state.drink.strIngredient1}</li>
-                <li>{this.state.drink.strIngredient2}</li>
-                <li>{this.state.drink.strIngredient3}</li>
-                <li>{this.state.drink.strIngredient4}</li>
-                <li>{this.state.drink.strIngredient5}</li>
-                <li>{this.state.drink.strIngredient6}</li>
-                <li>{this.state.drink.strIngredient7}</li>
-                <li>{this.state.drink.strIngredient8}</li>
-                <li>{this.state.drink.strIngredient9}</li>
-                <li>{this.state.drink.strIngredient10}</li>
-                <li>{this.state.drink.strIngredient11}</li>
-                <li>{this.state.drink.strIngredient12}</li>
-                <li>{this.state.drink.strIngredient13}</li>
-                <li>{this.state.drink.strIngredient14}</li>
-                <li>{this.state.drink.strIngredient15}</li>
-            </ul>
-            <h3>Instructions</h3>
-            <p>{this.state.drink.strInstructions}</p>
+        <div className="single-drink row row-cols-2  ">
+            <div className="col-5">
+            <img src={this.state.drink.strDrinkThumb} className="img-fluid  rounded-fa" alt=""/>
+                </div>
+            <div className="col">
+                <h3 className="cocktail-title">{this.state.drink.strDrink}</h3>
+                <div className="cocktail-info row row-cols-3">
+                     <p className="col">{this.state.drink.strCategory}</p>
+                     <p className="col">{this.state.drink.strAlcoholic}</p>
+                </div>
+                <div className="cocktail-info row">
+                {/* <figure>
+							<img 
+                            src={`https://www.thecocktaildb.com/images/ingredients/${this.state.drink.strIngredient1}-Small.png`}
+                                  style="width:80%" />
+							<figcaption>1/2 oz  Vodka</figcaption>
+				</figure> */}
+                </div>
+                
+
+                      <p>{this.state.drink.strIngredient1}</p>
+            </div>
         </div>
     ) : (
         <div>Loading...</div>
@@ -67,6 +68,16 @@ class SingleDrink extends Component {
     )
   }
 }
+
+    
+
+
+
+
+
+
+
+
 
 
 

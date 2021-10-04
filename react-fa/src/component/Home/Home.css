@@ -34,3 +34,26 @@
     font-weight: 500;
     height: 40px;
 }
+
+.rounded-fa{
+  
+  width: auto;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  border-radius: 12px;
+  border: 2px solid #ff5722;
+
+}
+
+.single-drink{
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 40px 50px;
+  
+
+}
+
+.cocktail-title{
+  font-weight: 400;
+}
