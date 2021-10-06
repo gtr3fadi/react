@@ -20,6 +20,7 @@ class SingleDrink extends Component {
                 drink: res.data.drinks[0]
 
         })
+        console.log(this.state.drink)
 
 
     }
@@ -30,18 +31,45 @@ class SingleDrink extends Component {
 
 
   render() {
+      const { drink } = this.state
 
-    // functin to get the ingredients image from the url  and return it
-    function getImage  (in1)  {
-        let imgUrl = `https://www.thecocktaildb.com/images/ingredients/${in1}-Small.png`
+    
+    // function getImage  (in1)  {
+    //     let imgUrl = `https://www.thecocktaildb.com/images/ingredients/${in1}-Small.png`
         
-        return <img src={imgUrl} alt="ingredient" /> }
+    //     return <img src={imgUrl} alt="ingredient" /> }
+
+    // function to get the ingredients from the drink and return it
+    function getIngredients (){
+        let ing = []
+        for (let i = 1; i < 15; i++) {
+            if (drink[`strIngredient${i}`]) {
+                ing.push(
+                    <figure className="col" key={i}>
+							
+                            <img src={`https://www.thecocktaildb.com/images/ingredients/${drink[`strIngredient${i}`]}-Small.png`} alt="ingredient" />
+                                <p>
+                                {drink[`strMeasure${i}`]}
+                            </p>
+							<figcaption>{drink[`strIngredient${i}`]}</figcaption>
+                            
+				</figure>
+                  
+                )
+            }
+        }
+        return ing
+    }
+
+    
+    
+    
     
 
       
      
 
-    const drink  = this.state.drink ? (
+    const drinkList  = this.state.drink ? (
         <div className="single-drink row row-cols-2  ">
             <div className="col-5">
             <img src={this.state.drink.strDrinkThumb} className="img-fluid  rounded-fa" alt=""/>
@@ -53,104 +81,15 @@ class SingleDrink extends Component {
                      <p className="col">{this.state.drink.strAlcoholic}</p>
                 </div>
                 <div className="cocktail-info row row-cols-3">
-                <figure className="col">
-							
-                                {getImage(this.state.drink.strIngredient1)}
-                                <p>
-                                {this.state.drink.strMeasure1}
-                            </p>
-							<figcaption>{this.state.drink.strIngredient1}</figcaption>
-                            
-				</figure>
-                <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient2)}
-                                    <p>
-                                    {this.state.drink.strMeasure2}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient2}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient3)}
-                                    <p>
-                                    {this.state.drink.strMeasure3}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient3}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient4)}
-                                    <p>
-                                    {this.state.drink.strMeasure4}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient4}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient5)}
-                                    <p>
-                                    {this.state.drink.strMeasure5}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient5}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient6)}
-                                    <p>
-                                    {this.state.drink.strMeasure6}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient6}</figcaption>  </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient7)}
-                                    <p>
-                                    {this.state.drink.strMeasure7}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient7}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient8)}
-                                    <p>
-                                    {this.state.drink.strMeasure8}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient8}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient9)}
-                                    <p>
-                                    {this.state.drink.strMeasure9}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient9}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient10)}
-                                    <p>
-                                    {this.state.drink.strMeasure10}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient10}</figcaption>
-                                
-                    </figure>
-                    <figure className="col">
-                                
-                                    {getImage(this.state.drink.strIngredient11)}
-                                    <p>
-                                    {this.state.drink.strMeasure11}
-                                </p>
-                                <figcaption>{this.state.drink.strIngredient11}</figcaption>
-                                
-                    </figure>
-                {this.state.drink.str}
+                        
+                    {getIngredients()}
+                  
+                    <p className="col-12">{this.state.drink.strGlass}</p>
+                    <p className="col-12">{this.state.drink.strInstructions}</p>
+
+
+                
+            
 
                 </div>
                 
@@ -162,9 +101,11 @@ class SingleDrink extends Component {
         <div>Loading...</div>
     )
 
+    
+
     return (
         <div>
-            {drink}
+            {drinkList}
         </div>
     )
   }
