@@ -45,15 +45,18 @@ class SingleDrink extends Component {
         for (let i = 1; i < 15; i++) {
             if (drink[`strIngredient${i}`]) {
                 ing.push(
-                    <figure className="col" key={i}>
-							
-                            <img src={`https://www.thecocktaildb.com/images/ingredients/${drink[`strIngredient${i}`]}-Small.png`} alt="ingredient" />
-                                <p>
-                                {drink[`strMeasure${i}`]}
-                            </p>
-							<figcaption>{drink[`strIngredient${i}`]}</figcaption>
-                            
-				</figure>
+                    <div className="col-6 m-0 p-1">
+                        <div className=" row rounded-ing" key={i}>
+                        <div className="col-4">
+                            <img className="img-fluid" src={`https://www.thecocktaildb.com/images/ingredients/${drink[`strIngredient${i}`]}-Small.png`} alt="ingredient" />
+                        </div>
+                        <div className="col-8">
+                            <div>INGREDIENT {i}</div>
+                            <div> {drink[`strMeasure${i}`]}</div>
+                            <div>{drink[`strIngredient${i}`]}</div>
+                        </div>    
+			    	</div>
+                    </div>
                   
                 )
             }
@@ -70,22 +73,30 @@ class SingleDrink extends Component {
      
 
     const drinkList  = this.state.drink ? (
-        <div className="single-drink row row-cols-2  ">
-            <div className="col-5">
+        <div className="single-drink row row-cols-lg-2 row-cols-1  ">
+            <div className="col-lg-5 col-12">
             <img src={this.state.drink.strDrinkThumb} className="img-fluid  rounded-fa" alt=""/>
                 </div>
-            <div className="col">
-                <h3 className="cocktail-title">{this.state.drink.strDrink}</h3>
-                <div className="cocktail-info row row-cols-3">
+            <div className="col-lg-7 col-12">
+                <h3 className="cocktail-title ">{this.state.drink.strDrink}</h3>
+                <div className="cocktail-info row row-cols-2">
                      <p className="col">{this.state.drink.strCategory}</p>
                      <p className="col">{this.state.drink.strAlcoholic}</p>
                 </div>
-                <div className="cocktail-info row row-cols-3">
-                        
-                    {getIngredients()}
-                  
-                    <p className="col-12">{this.state.drink.strGlass}</p>
-                    <p className="col-12">{this.state.drink.strInstructions}</p>
+                <div className="cocktail-info row row-cols-2">          
+                        {getIngredients()}
+                      <div  className="rounded-ing-fa col-12">
+                      <div >
+                          <div>SERVED IN :</div>
+                          <div>{this.state.drink.strGlass}</div>
+                      </div>
+                      <hr/>
+
+                      <div>
+                          <div>INSTRUCTIONS :</div>
+                          <div>{this.state.drink.strInstructions}</div>
+                      </div>
+                      </div>
 
 
                 
@@ -104,7 +115,7 @@ class SingleDrink extends Component {
     
 
     return (
-        <div>
+        <div className="container-fa">
             {drinkList}
         </div>
     )
