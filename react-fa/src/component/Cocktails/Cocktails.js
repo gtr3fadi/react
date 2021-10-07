@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import "./Home.css";
 
 
-class Home extends Component {
+class Cocktails extends Component {
 
     
         constructor(props){
@@ -130,4 +130,4 @@ class Home extends Component {
 
 }
 
-export default Home
+export default Cocktails;

@@ -1,5 +1,26 @@
 .navbar-fa{
   background-color: #ff5722;
+  /* background-image: linear-gradient(90deg, #dd2c00 0%, #ff5722 75%); */
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  padding: 0px;
+}
+
+
+.navbar-brand{
+  align-items: flex-end;
+  font-size: 1.5em;
+  margin: 0px 40px;
+}
+
+.navbar-expand-lg{
+  align-items: self-end;
+  
+}
+
+.nav-item{
+  margin: 0px 20px;
+  line-height: 1.5em;
 }
 
 
@@ -15,6 +36,7 @@
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     border-radius: 12px;
     border: 2px solid #ff5722;
+    
 }
 
 
@@ -63,8 +85,17 @@
   border-radius: 10px;
   /* border: 1px solid #ff5722; */
   margin: 5px 10px;
-  padding: 5px 20px;
+  padding: 12px 20px;
   align-items: center;
+}
+.font-fa{
+  color: #dd2c00;
+}
+
+.font-fa-2{
+  color: black;
+  font-weight: 500;
+  font-size: medium;
 }
 
 .single-drink{
@@ -77,4 +108,8 @@
 
 .cocktail-title{
   font-weight: 400;
+  font-family: 'Playfair Display', serif;
 }
+
+
+

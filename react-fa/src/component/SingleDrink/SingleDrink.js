@@ -48,12 +48,12 @@ class SingleDrink extends Component {
                     <div className="col-6 m-0 p-1">
                         <div className=" row rounded-ing" key={i}>
                         <div className="col-4">
-                            <img className="img-fluid" src={`https://www.thecocktaildb.com/images/ingredients/${drink[`strIngredient${i}`]}-Small.png`} alt="ingredient" />
+                            <img className="img-fluid" src={`https://www.thecocktaildb.com/images/ingredients/${drink[`strIngredient${i}`]}-Small.png`} title={drink[`strIngredient${i}`]}  alt={drink[`strIngredient${i}`]} />
                         </div>
                         <div className="col-8">
-                            <div>INGREDIENT {i}</div>
-                            <div> {drink[`strMeasure${i}`]}</div>
-                            <div>{drink[`strIngredient${i}`]}</div>
+                            <div >INGREDIENT {i}</div>
+                            <div className="font-fa"> {drink[`strMeasure${i}`]}</div>
+                            <div className="font-fa-2">{drink[`strIngredient${i}`]}</div>
                         </div>    
 			    	</div>
                     </div>
@@ -78,23 +78,22 @@ class SingleDrink extends Component {
             <img src={this.state.drink.strDrinkThumb} className="img-fluid  rounded-fa" alt=""/>
                 </div>
             <div className="col-lg-7 col-12">
-                <h3 className="cocktail-title ">{this.state.drink.strDrink}</h3>
-                <div className="cocktail-info row row-cols-2">
-                     <p className="col">{this.state.drink.strCategory}</p>
-                     <p className="col">{this.state.drink.strAlcoholic}</p>
+                <h3 className="cocktail-title ps-3 ">{this.state.drink.strDrink}</h3>
+                <div className="cocktail-info ps-3">
+                     <p className=""> {this.state.drink.strAlcoholic} /  {this.state.drink.strCategory}</p>
                 </div>
                 <div className="cocktail-info row row-cols-2">          
                         {getIngredients()}
                       <div  className="rounded-ing-fa col-12">
                       <div >
                           <div>SERVED IN :</div>
-                          <div>{this.state.drink.strGlass}</div>
+                          <div className="font-fa-2">{this.state.drink.strGlass}</div>
                       </div>
                       <hr/>
 
                       <div>
                           <div>INSTRUCTIONS :</div>
-                          <div>{this.state.drink.strInstructions}</div>
+                          <div className="font-fa-2">{this.state.drink.strInstructions}</div>
                       </div>
                       </div>
 
